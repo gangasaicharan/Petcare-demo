@@ -127,7 +127,7 @@ function Layout() {
     <>
       <header className="bg-white shadow p-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <img src="logo2.png" alt="Logo" className="h-12" />
+          <Image src="/logo2.png" alt="Logo" className="h-12" width={48} height={48} />
           <h1 className="text-2xl font-bold text-blue-600">Pet-care</h1>
         </div>
         <div className="flex items-center space-x-4">
@@ -199,11 +199,11 @@ function Layout() {
         </div>
         <div className="flex items-center space-x-4">
           <AiOutlineMenu className="text-gray-700 h-6 w-6" />
-          <img src="avatar.jpeg" alt="User" className="h-12 w-12 rounded-full" />
+          <Image src="/avatar.jpeg" alt="User" className="h-12 w-12 rounded-full" width={48} height={48} />
         </div>
       </header>
       <div className="p-4 flex space-x-4">
-        <img src="avatar.jpeg" alt="User" className="h-20 w-20 rounded-full" />
+        <Image src="/avatar.jpeg" alt="User" className="h-20 w-20 rounded-full" width={80} height={80} />
         <div>
           <p>{getCurrentDate()}</p> 
           <p className="font-bold">Good Morning, Mrs. Jane</p>
@@ -264,7 +264,7 @@ function Layout() {
             <div className="flex-grow overflow-y-auto">
   {filteredChats.map((chat) => (
     <div key={chat.id} className="flex items-center p-2 hover:bg-gray-100 rounded">
-      <img src={chat.image} alt={chat.name} className="h-10 w-10 rounded-full mr-3" />
+                <Image src={chat.image} alt={chat.name} className="h-10 w-10 rounded-full mr-3" width={40} height={40} />
       <div className="flex-grow">
         <div className="flex justify-between">
           <p className="font-bold">{chat.name}</p>
@@ -341,11 +341,13 @@ function Layout() {
                     key={appointment.id}
                     className="relative items-center p-2 hover:bg-gray-100 rounded"
                   >
-                    <img
-                      src={appointment.doctorImage}
-                      alt={appointment.doctorName}
-                      className=" absolute top-4 left-0 h-11 w-12 rounded-full mr-2"
-                    />
+                    <Image
+                    src={appointment.doctorImage}
+                    alt={appointment.doctorName}
+                    className="h-10 w-10 rounded-full mr-3"
+                    width={40}
+                    height={40}
+                  />
                     <div className='pl-14'>
                       <p className="font-bold">{appointment.doctorName}</p>
                       <p className="text-sm text-gray-600">{appointment.description}</p>
