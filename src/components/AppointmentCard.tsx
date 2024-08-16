@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { AiOutlineMessage } from 'react-icons/ai';
+import Image from 'next/image';
+
 
 interface AppointmentCardProps {
   doctor: string;
@@ -38,7 +40,13 @@ const AppointmentCard = ({ doctor, doctorImage, client, pet, time, isPending }: 
   return (
     <div className="bg-white p-4 rounded shadow">
       <div className="flex items-start mb-4">
-        <img src={doctorImage} alt={doctor} className="w-20 h-20 rounded-full mr-4" />
+        <Image 
+          src={doctorImage} 
+          alt={doctor} 
+          width={80} 
+          height={80} 
+          className="w-20 h-20 rounded-full mr-4" 
+        />
         <div className="flex-1 justify-center">
           <h3 className="font-bold">{doctor}</h3>
           <p className="text-sm text-blue-600">Client: {client}</p>
