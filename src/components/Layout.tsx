@@ -24,7 +24,7 @@ function Layout() {
   const [appointmentSearchQuery, setAppointmentSearchQuery] = useState('');
   const [activeAppointmentsTab, setActiveAppointmentsTab] = useState('today');
 
-  const notificationsRef = useRef(null);
+  const notificationsRef = useRef<HTMLDivElement | null>(null);
 
   const toggleChatsSidebar = () => {
     setIsChatsSidebarOpen(!isChatsSidebarOpen);
@@ -39,16 +39,20 @@ function Layout() {
   };
 
   useEffect(() => {
-    const handleClickOutside = (event: { target: any; }) => {
-      if (notificationsRef.current && !notificationsRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        notificationsRef.current &&
+        !notificationsRef.current.contains(event.target as Node)
+      ) {
         setIsNotificationsDropdownOpen(false);
       }
     };
+
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [notificationsRef]);
+  }, []);
 
   const getCurrentDate = () => {
     const date = new Date();
