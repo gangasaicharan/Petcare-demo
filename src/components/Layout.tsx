@@ -178,11 +178,13 @@ function Layout() {
                         key={notification.id}
                         className="flex items-center p-2 bg-white hover:bg-gray-100 rounded-lg shadow-sm"
                       >
-                        <img
-                          src={notification.image}
-                          alt="Notification"
-                          className="h-8 w-8 rounded-full mr-3"
-                        />
+                        <Image
+    src={notification.image}
+    alt="Notification"
+    className="rounded-full mr-3"
+    width={32}
+    height={32}
+/>
                         <div>
                           <p className="text-sm text-gray-600">{notification.note}</p>
                           <p className="text-xs text-gray-500">{notification.date} </p>
