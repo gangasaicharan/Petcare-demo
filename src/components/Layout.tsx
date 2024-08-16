@@ -54,9 +54,9 @@ function Layout() {
     };
   }, []);
 
-  const getCurrentDate = () => {
+  const getCurrentDate = (): string => {
     const date = new Date();
-    const options = { 
+    const options: Intl.DateTimeFormatOptions = { 
         weekday: 'long', 
         year: 'numeric', 
         month: 'long',   
@@ -64,6 +64,7 @@ function Layout() {
     };
     return date.toLocaleDateString('en-US', options);
 };
+
 
   const chats = [
     { id: 1, name: 'Dr. John Doe', image: '/doctor1.jpeg', lastMessage: "Let's schedule a follow-up.", time:'23:07'},
