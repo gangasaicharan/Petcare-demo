@@ -56,9 +56,14 @@ function Layout() {
 
   const getCurrentDate = () => {
     const date = new Date();
-    const options = { weekday: 'string', year: 'string', month: 'string', day: 'string' };
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long',   
+        day: 'numeric'
+    };
     return date.toLocaleDateString('en-US', options);
-  };
+};
 
   const chats = [
     { id: 1, name: 'Dr. John Doe', image: '/doctor1.jpeg', lastMessage: "Let's schedule a follow-up.", time:'23:07'},
