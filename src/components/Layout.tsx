@@ -12,6 +12,8 @@ import {
   AiOutlineLeft,
   AiOutlineSearch,  
 } from 'react-icons/ai';
+import Image from 'next/image';
+
 
 function Layout() {
   const [isChatsSidebarOpen, setIsChatsSidebarOpen] = useState(false);
@@ -55,18 +57,18 @@ function Layout() {
   };
 
   const chats = [
-    { id: 1, name: 'Dr. John Doe', image: 'doctor1.jpeg', lastMessage: "Let's schedule a follow-up.", time:'23:07'},
-    { id: 2, name: 'Dr. Jane Smith', image: 'doctor2.jpeg', lastMessage: "Please review the patient's file.",time:'09:33' },
-    { id: 3, name: 'Dr. Alice Johnson', image: 'doctor3.jpeg', lastMessage: 'See you at the clinic.',time:'07:24' },
-    { id: 4, name: 'Dr. Robert Brown', image: 'doctor4.jpeg', lastMessage: 'We need to adjust the medication.',time:'01:06' },
-    { id: 5, name: 'Dr. Emily Davis', image: 'doctor5.jpeg', lastMessage: 'Good job on the surgery today.',time:'10:08' },
+    { id: 1, name: 'Dr. John Doe', image: '/doctor1.jpeg', lastMessage: "Let's schedule a follow-up.", time:'23:07'},
+    { id: 2, name: 'Dr. Jane Smith', image: '/doctor2.jpeg', lastMessage: "Please review the patient's file.",time:'09:33' },
+    { id: 3, name: 'Dr. Alice Johnson', image: '/doctor3.jpeg', lastMessage: 'See you at the clinic.',time:'07:24' },
+    { id: 4, name: 'Dr. Robert Brown', image: '/doctor4.jpeg', lastMessage: 'We need to adjust the medication.',time:'01:06' },
+    { id: 5, name: 'Dr. Emily Davis', image: '/doctor5.jpeg', lastMessage: 'Good job on the surgery today.',time:'10:08' },
   ];
 
   const appointments = [
     {
       id: 1,
       doctorName: 'Dr. John Doe',
-      doctorImage: 'doctor1.jpeg',
+      doctorImage: '/doctor1.jpeg',
       description: 'General check-up the art of medicine consists of amusing the patient while nature cures the disease',
       client: 'Alice Johnson',
       time: '10:00 AM',
@@ -75,7 +77,7 @@ function Layout() {
     {
       id: 2,
       doctorName: 'Dr. Jane Smith',
-      doctorImage: 'doctor2.jpeg',
+      doctorImage: '/doctor2.jpeg',
       description: 'Follow-up consultation',
       client: 'Bob Martin',
       time: '11:30 AM',
@@ -84,7 +86,7 @@ function Layout() {
     {
       id: 3,
       doctorName: 'Dr. Alice Johnson',
-      doctorImage: 'doctor3.jpeg',
+      doctorImage: '/doctor3.jpeg',
       description: 'Pediatric check-up',
       client: 'Charlie Smith',
       time: '12:00 PM',
@@ -93,10 +95,10 @@ function Layout() {
   ];
 
   const notifications = [
-    { id: 1, image: 'doctor2.jpeg', note: 'New policy update available.',date:'jan 23, 2024' },
-    { id: 2, image: 'doctor4.jpeg', note: 'Appointment reminder for Dr. John Doe.',date:'jan 15, 2024' },
-    { id: 3, image: 'doctor2.jpeg', note: 'You have a new message from Dr. Jane Smith.',date:'sep 02, 2024' },
-    { id: 4, image: 'doctor6.jpeg', note: 'Your prescription is ready for pickup.',date:'jan 04, 2024' },
+    { id: 1, image: '/doctor2.jpeg', note: 'New policy update available.',date:'jan 23, 2024' },
+    { id: 2, image: '/doctor4.jpeg', note: 'Appointment reminder for Dr. John Doe.',date:'jan 15, 2024' },
+    { id: 3, image: '/doctor2.jpeg', note: 'You have a new message from Dr. Jane Smith.',date:'sep 02, 2024' },
+    { id: 4, image: '/doctor6.jpeg', note: 'Your prescription is ready for pickup.',date:'jan 04, 2024' },
   ];
 
   const handleChatSearchChange = (event) => {
