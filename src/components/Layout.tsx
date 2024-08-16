@@ -314,7 +314,7 @@ function Layout() {
                 }`}
                 onClick={() => handleTabChange('today')}
               >
-                Today's Appointments
+                Today&apos:s Appointments
               </button>
               <button
                 className={`flex-auto p-2 ${
