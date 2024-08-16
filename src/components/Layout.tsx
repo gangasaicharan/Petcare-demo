@@ -56,7 +56,7 @@ function Layout() {
 
   const getCurrentDate = () => {
     const date = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const options = { weekday: 'string', year: 'string', month: 'string', day: 'string' };
     return date.toLocaleDateString('en-US', options);
   };
 
