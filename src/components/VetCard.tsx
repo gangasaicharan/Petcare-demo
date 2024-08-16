@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
+
 
 interface VetCardProps {
     name: string;
@@ -35,7 +37,7 @@ const ChatBox = ({ name, status, image, onClose }: ChatBoxProps) => {
         <div className="fixed bottom-0 right-4 w-1/3 max-w-lg bg-white rounded-t-lg shadow-lg flex flex-col">
             <div className="flex items-center justify-between p-4 border-b">
                 <div className="flex items-center">
-                    <img src={image} alt={name} className="w-10 h-10 rounded-full mr-2" />
+                    <Image src={image} alt={name} className="rounded-full mr-2" width={40} height={40} />
                     <div>
                         <p className="font-semibold">{name}</p>
                         <p className={`text-sm ${status === 'Online' ? 'text-green-500' : 'text-red-500'}`}>{status}</p>
@@ -87,7 +89,7 @@ const VetCard = ({ name, specialization, status, image }: VetCardProps) => {
 
     return (
         <div className="bg-white p-4 rounded shadow flex items-center mb-4">
-            <img src={image} alt={name} className="w-20 h-20 rounded-full mr-4" />
+            <Image src={image} alt={name} className="rounded-full mr-4" width={80} height={80} />
             <div className="flex-1 justify-center">
                 <div className="flex justify-between items-center">
                     <div>
