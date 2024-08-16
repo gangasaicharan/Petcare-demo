@@ -111,17 +111,18 @@ function Layout() {
     { id: 4, image: '/doctor6.jpeg', note: 'Your prescription is ready for pickup.',date:'jan 04, 2024' },
   ];
 
-  const handleChatSearchChange = (event) => {
-    setChatSearchQuery(event.target.value);
-  };
+const handleChatSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setChatSearchQuery(event.target.value);
+};
 
-  const handleAppointmentSearchChange = (event) => {
-    setAppointmentSearchQuery(event.target.value);
-  };
+const handleAppointmentSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setAppointmentSearchQuery(event.target.value);
+};
 
-  const handleTabChange = (tab) => {
-    setActiveAppointmentsTab(tab);
-  };
+const handleTabChange = (tab: string) => {
+  setActiveAppointmentsTab(tab);
+};
+
 
   const filteredChats = chats.filter((chat) =>
     chat.name.toLowerCase().includes(chatSearchQuery.toLowerCase())
